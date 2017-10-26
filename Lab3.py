@@ -6,7 +6,7 @@ import pandas as pd
 site = urllib.request.urlopen('https://www.accuweather.com/ru/world-weather')
 html = site.read().decode('utf8')
 
-city = re.findall(r'<a href="https://www.accuweather.com/ru/.*/\d+">[A-Za-z]+</a>', html)
+city = re.findall(r'<a href="https://www.accuweather.com/ru/.*/\d+">[A-Za-z ]+</a>', html)
 temperature = re.findall(r'<span>(\d+).*</span>', html)
 
 h = html2text.HTML2Text()
